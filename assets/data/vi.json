@@ -1,0 +1,68 @@
+{
+
+  "days": "Ngày",
+  "hours": "Giờ",
+  "minutes": "Phút",
+  "seconds": "Giây",
+  "keepTheLoveAlive": "VẬN MAY THẦN TÀI - Nhiệm vụ Hàng ngày",
+
+  "instructionCta": "Nhấn vào thỏi vàng được đánh dấu để mở khóa phần thưởng của ngày hôm nay.",
+  "myPresents": "Quà của tôi",
+  "howToPlay": "Cách chơi",
+  "faqTitle": "Câu hỏi thường gặp",
+  "day": "ngày",
+  "status": "trạng thái",
+  "reward": "Quà tặng đã nhận",
+  "opened": "Đã mở",
+  "available": "Có sẵn",
+  "days2go": "vài ngày nữa",
+  "day2go": "ngày nữa",
+  "almostThere": "Gần như ở đó",
+  "at_msg1": "Để yêu cầu tiền thưởng ngày hôm nay, tất cả những gì bạn làm là ",
+  "at_msg2": "Sau khi hoàn thành, bạn có thể quay lại đây",
+  "takeMeToDeposit": "Cho tôi gửi tiền",
+  "noThanks": "Không, cảm ơn",
+  "missinComplete": "Hoàn thành nhiệm vụ",
+  "pressClaimMsg": "Yeah! Bạn đã làm được! Đây là tiền thưởng dành cho bạn!",
+  "claim": "Nhận",
+  "congratulations": "Xin chúc mừng",
+  "congrats_msg_1": "Bạn đã mở khóa",
+  "congrats_msg_2": "Được sử dụng trên bất kỳ trò chơi Nổ Hủ nào trên nền tảng Happistar",
+  "great": "Tuyệt vời!",
+  "rewardDisclaimerMsg": "Tiền thưởng sẽ được tặng trong khoảng 5 phút đến 60 phút",
+  "errorTitle": "Lỗi không rõ",
+  "errorMessage": "Rất tiếc! Hệ thống gặp trục trặc! Chúng tôi đang tiền hành xử lý! Thử lại sau vài phút hoặc liên hệ với Chăm sóc Khách hàng!",
+  "howToPlayResults": "<h2>Thể lệ giải đấu:</h2><ul> <li>1. Tất cả Người chơi Happistar đều đủ điều kiện tham gia VẬN MAY THẦN TÀI - NHIỆM VỤ HÀNG NGÀY</li><li>2. Chương trình diễn ra từ 04:29 ngày 10/03 đến 04:30 ngày 17/03/2023</li><li>3. Để tham gia, người chơi phải vào Tab đặc biệt - Nhiệm vụ VẬN MAY THẦN TÀI và nhấp vào 'Xu vàng trong ngày'.</li><li>4. Mỗi Đồng xu vàng có các thử thách tương ứng phải hoàn thành trong ngày để nhận thưởng.</li><li>5. Tất cả phần thưởng sẽ được tự động ghi có vào tài khoản của bạn trong vòng 24 giờ sau khi hoàn thành thử thách và phải đạt yêu cầu đặt cược bắt buộc trước khi có thể rút tiền.</li></ul><h2>Điều khoản và điều kiện tiền thưởng:</h2><ul> <li>6. Vòng quay miễn phí=Tiền thắng từ vòng quay miễn phí x 20 yêu cầu đặt cược</li><li>7. Tiền thưởng sòng bạc=Tiền thưởng x 5 hoặc 10 yêu cầu đặt cược</li><li>8. HappiStar có quyền thay đổi hoặc hủy bỏ tiền thưởng mà không cần thông báo. </li><li>9. HappiStar có quyền loại bỏ bất kỳ người chơi nào bị phát hiện tham gia vào bất kỳ hoạt động gian lận nào.</li><li>10. Điều khoản & Điều kiện chung được áp dụng.</li></ul>",
+  "retry": "Thử lại",
+
+  "alreadyOpenedTheBox" : "Bạn đã mở hộp quà",
+  "alreadyClaimedTheBonus" :  "Bạn đã yêu cầu tiền thưởng",
+  "missed": "Bỏ lỡ",
+  "error": "Lỗi",
+  "howItWorks": "Thể Thức",
+
+  "chooseOfferTxt1": "Bạn có thể chọn",
+  "chooseOfferTxt2": " được sử dụng trên bất kỳ trò chơi xèng nào trên nền tảng happistar",
+  "maybeLater": "có lẽ sau này",
+  "happiIntroMsg": "VẬN MAY THẦN TÀI - Nhiệm vụ Hàng ngày",
+  "introMessage1": "Bạn có sẵn sàng cho các thử thách? Tham gia VẬN MAY THẦN TÀI Nhiệm vụ hàng ngày để nhấp, hoàn thành và chinh phục! Đăng nhập hàng ngày để nhấp vào Thỏi vàng trong ngày và thử thách bản thân hoàn thành các nhiệm vụ để nhận được vận may hàng ngày!",
+  "introMessage2": "Đăng nhập và hoàn thành thử thách hàng ngày để nhận phần thưởng!",
+  "introMessage3": "Dù còn độc thân hay đã có một nửa, bạn đều được mời!",
+  "myEnvelopes": "phong bì của tôi",
+
+  "comingSoonMsg": "HappiStar sẽ trao lộc đầu năm vào ngày Mùng 1 Tết (Chủ Nhật, 22/01).",
+  "comingSoonMsg2": "Hãy quay lại để xem điều bất ngờ gì đang chờ đón bạn nhé!",
+  
+  "orTxt": "HOẶC",
+
+
+  "faq": [
+    {"Q": "FAQ",
+      "A": [
+        "FAQ Item 1",
+        "Faq item 2",
+        "and faq item 3 here"
+      ]
+    }
+  ]
+}

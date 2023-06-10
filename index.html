@@ -1,0 +1,799 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happistar God of Fortune</title>
+    <link rel="icon" href="assets/_favicon.ico">
+    <link rel="stylesheet" href="css/styles.css?v=112">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css"/> -->
+</head>
+<body>
+
+    <div id="app" v-cloak>
+
+
+        <!--Main banner on top-->
+        <!-- <section id="video-first">
+        
+            <video width="100%" muted autoplay="autoplay" >
+
+                
+                <source v-bind:src=" './assets/video/' + langVal + '-intro.mp4' " type="video/mp4" >
+
+                Your browser does not support the video tag.
+
+            </video>
+
+
+        </section> -->
+
+
+        <section id="real-second" class="banner-wrap" v-if="countdownMode==false">
+
+
+            <div class="cta-cont">
+                <h1 class="text-center">{{ languages?.happiIntroMsg }}</h1>
+            </div>
+
+            <div class="hearts-container">
+                <div class="row current-days">
+
+                    <div class="row done-days">
+                        <!--place done days here-->
+                        <img
+                        v-for="(days, index) in getDoneDays()" 
+                        v-bind:src=" 'assets/done-coins/' + days.toString() + '.png' " 
+                        alt="" height="40px"
+                        :style="{ zIndex:  [1,2,3,4,5,6,7].reverse()[Number(index)] }">
+                    </div>
+
+
+                    <div class="cupid-cont">
+                        <img src="assets/gof-doll-cd.png" alt="" srcset="" height="350px" class="doll">
+                        <div class="current-coin">
+                            <img :src=" 'assets/today-coins/' + mainOfferData?.currentDay + '.png' " :alt=" 'day ' + mainOfferData?.currentDay " srcset="" 
+                            class="today-heart"
+                            v-on:click="checkOnSelectedStatus();"
+                            v-if="mainOfferData?.currentDay>0"
+                            height="130px">
+                        </div>
+                    </div>
+                    
+                    <div class="remain-days-cont">
+
+                        <img 
+                        v-for="(days, index) in getRemainDays()" 
+                        v-bind:src=" 'assets/upcoming-coins/' + days.toString() + '.png' " alt="" height="40px"
+                        :style="{ zIndex:  [1,2,3,4,5,6,7].reverse()[Number(index)] }">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-cont2">
+                <h3 class="text-center white-txt">{{ languages?.instructionCta }}</h3>
+            </div>
+           
+
+
+            <svg style="position:absolute; height:0">
+                <filter id="gold-wash" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="1.00 0   0   0   0
+                0   0.89  0   0   0
+                0   0   0.00  0   0
+                0   0   0   1   0"/>
+                </filter>
+            </svg>
+
+            <svg style="position:absolute; height:0">
+                <filter id="black-wash" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="0     0     0     0     0
+                0     0     0     0     0
+                0     0     0     0     0
+                0     0     0     1     0 "/>
+                </filter>
+            </svg>
+
+            <svg style="position:absolute; height:0">
+                <filter id="red-wash" color-interpolation-filters="sRGB">
+                <feColorMatrix type="matrix" values="0.49 0   0   0   0
+                0   0.04  0   0   0
+                0   0   0.14  0   0
+                0   0   0   1   0  "/>
+                </filter>
+            </svg>
+
+
+        </section>
+
+
+
+        <section id="countdown" v-if="countdownMode===true">
+
+            <!-- <img src="assets/left-heart.png" height="170px" alt="" class="left-heart">
+            <img src="assets/right-heart.png" height="170px" alt="" class="right-heart"> -->
+
+            <div class="hearts-container">
+                <div class="row done-days" style="margin: 0 auto;">
+
+
+                    <img src="assets/today-coins/1.png" alt="" srcset="" height="45px">
+                    <img src="assets/today-coins/2.png" alt="" srcset="" height="45px">
+                    <img src="assets/today-coins/3.png" alt="" srcset="" height="45px">
+                    <img src="assets/today-coins/4.png" alt="" srcset="" height="45px">
+                    <img src="assets/today-coins/5.png" alt="" srcset="" height="45px">
+                    <img src="assets/today-coins/6.png" alt="" srcset="" height="45px">
+                    <img src="assets/today-coins/7.png" alt="" srcset="" height="45px">
+
+
+                </div>
+                <div class="row current-days">
+                    <div class="cupid-cont">
+                        <img src="assets/gof-doll-cd.png" alt="" srcset="" height="300px" style="display: block; margin: 0 auto; ">
+                    </div>
+                    <div class="cta-cont">
+                        <h1 class="text-center" style="padding-bottom: 1vh;">{{ languages?.happiIntroMsg }}</h1>
+                       
+                    </div>
+                </div>
+                <div class="tickers-container">
+
+                    <img src="assets/small-heart-left.png" class="small-floater left" alt="">
+                    <img src="assets/small-heart-right.png" class="small-floater right" alt="">
+
+                    <div class="inner">
+
+                       <div class="clock-base">
+                        <div class="txt-inside-img">
+                            <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                            <div class="centered">
+                                <h1>{{ tensOnes('tens', cd_days) }}</h1>
+                            </div>
+                        </div>
+                        <div class="txt-inside-img">
+                            <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                            <div class="centered">
+                                <h1>{{ tensOnes('ones', cd_days) }}</h1>
+                            </div>
+                        </div>
+                       </div>
+
+                        <div class="clock-label">{{ languages?.days }}</div>
+
+                    </div>  
+                    <div class="inner">
+                        
+
+                        <div class="clock-base">
+                            <div class="txt-inside-img">
+                                <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1 id="hours">{{ tensOnes('tens', cd_hours) }}</h1>
+                                </div>
+                            </div>
+                            <div class="txt-inside-img">
+                                <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1>{{ tensOnes('ones', cd_hours) }}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clock-label">{{ languages?.hours }}</div>
+
+                    </div>  
+                    <div class="inner">
+                        
+                        <div class="clock-base">
+                            <div class="txt-inside-img">
+                                <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1 id="minutes">{{ tensOnes('tens', cd_minutes) }}</h1>
+                                </div>
+                            </div>
+                            <div class="txt-inside-img">
+                                <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1>{{ tensOnes('ones', cd_minutes) }}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clock-label">{{ languages?.minutes }}</div>
+
+
+                    </div>  
+                    <div class="inner">
+                        
+                        <div class="clock-base">
+                            <div class="txt-inside-img">
+                                <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1 id="seconds">{{ tensOnes('tens', cd_seconds) }}</h1>
+                                </div>
+                            </div>
+                            <div class="txt-inside-img">
+                                <img src="assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                                <div class="centered">
+                                    <h1>{{ tensOnes('ones', cd_seconds) }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="clock-label">{{ languages?.seconds }}</div>
+
+
+                    </div>  
+                </div>
+            </div>
+            
+
+
+        </section>
+
+        <section class="cd-wrap mobile" v-if="countdownMode===false"> 
+
+            
+            <!-- <h1 class="text-center title txt-bold">{{ languages?.twelveDaysOfChristmas }}</h1> -->
+
+            <div class="days-wrap">
+
+                <div class="dayLbl">
+                    <h1 class="love-txt medium-txt " style="text-align: center; ">{{ languages?.keepTheLoveAlive }}</h1>
+                    <h1 class="day-txt " style="text-transform: capitalize; color: #fff; text-align: center; ">{{ languages?.day }}</h1>
+                </div>
+
+                <div class="dayClock" style="display: flex; flex-direction: row;">
+                    <div class="txt-inside-img">
+                        <img src="./assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                        <div class="centered">
+                            <h1 v-if="mainOfferData?.currentDay < 10">0</h1>
+                            <h1 v-else>{{ mainOfferData?.currentDay }}</h1>
+                        </div>
+                    </div>
+    
+    
+                    <div class="txt-inside-img">
+                        <img src="./assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                        <div class="centered">
+                            <h1>{{ mainOfferData?.currentDay }}</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>  
+
+
+
+        <nav class="menu" v-if="countdownMode===false">
+
+            <ul>
+                <li id="myPresentsM" ><a class="" href="javascript:void(0);" v-on:click="switchPage(1);">{{ languages?.myEnvelopes || 'My Envelopes' }}<i class="fa fa-play" aria-hidden="true"></i></a>
+                    
+                </li>
+                <li id="howToPlayM" ><a class="" href="javascript:void(0);" v-on:click="switchPage(2);">{{ languages?.howToPlay }}<i class="fa fa-play" aria-hidden="true"></i></a>
+                    
+                </li>
+                <li id="faqM" v-if="false"><a class="" href="javascript:void(0);" v-on:click="switchPage(3);">{{ languages?.faqTitle }} <i class="fa fa-play" aria-hidden="true" > </i></a>
+                   
+                </li>
+            </ul>
+
+        </nav>
+
+        <section id="myPresentsM" class="scale-in-ver-top gray-bg" v-if="showMyPresents">
+
+            <div class="containerx" style="box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;
+            -webkit-box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;
+            -moz-box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;"
+            v-if="mainOfferData?.currentDay>0">
+  
+  
+                <table id="presents-tbl" cellspacing="0px" cellpadding="20px">
+
+  
+                     <thead>
+                         <th class="uppercase txt-bold">{{ languages?.day }}</th>
+                        <th class="uppercase txt-bold">{{ languages?.status }}</th>
+                         <th class="uppercase txt-bold">{{ languages?.reward }}</th>
+                     </thead>
+ 
+                    <tbody>
+                         <tr v-for="(items, index) in mainOfferData?.days">
+                            <td style="text-transform: capitalize;">{{languages?.day }} {{ index }}</td>
+                             <td>
+
+                                 <img :src=" 
+                                 
+                                 items[0].upcoming === true ? 
+                                    './assets/upcoming.png' 
+                                    :( items[0].status === 0) && ( Number(index) !== mainOfferData?.currentDay) ?
+                                    './assets/done.png'
+                                        : Number(index) === mainOfferData?.currentDay ?
+                                            './assets/selected.png'
+                                            : './assets/done.png'" 
+                                    
+                                            width="40px" alt="">
+  
+                                
+                                 <!-- <img :src=" items[0].upcoming === true ? './assets/gifts/inactive-heart.png' : './assets/gifts/blank-heart.p ng' " height="40px" alt=""
+                                 :class="{ blackFilter: items[0].upcoming === true, fadeMe: ( items[0].status === 0) && ( Number(index) !== main OfferData?.currentDay) }" >
+                                --> 
+                                
+                                <span style="text-transform: capitalize;" 
+                                v-if="Number(index) === mainOfferData?.currentDay ">{{ languages?.available }}!</span>
+                                <span style="text-transform: capitalize;"  
+                                v-if="( items[0].status === 0) && ( Number(index) !== mainOfferData?.currentDay) ">{{ languages?.missed }}!</span>
+                                <span style="text-transform: capitalize;" 
+                                v-if="items[0].status === 1 ">{{ languages?.opened }}</span>
+                                <span v-if="items[0].upcoming === true ">{{ items[0].status }}</span>
+                                
+
+                            </td>
+
+                            <td
+                            >
+                            
+                            <span :class="{ hideThis: hideTodaysRewardInTable(  Number(index) )===true }" >{{ items[0].reward }}</span>
+
+                            
+                        </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+
+        </section>
+
+
+
+        <section id="howToPlayM" class="fade-in two scale-in-ver-top gray-bg-light" v-if="showHowtoPlay" 
+        style="box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;
+        -webkit-box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;
+        -moz-box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;">
+
+
+            <div class="container" 
+            style="margin-top: 0px;">
+                <h1 class="uppercase small-txt text-center black-txt font-strong"
+                style="margin-bottom: 10vh;">
+                {{ languages?.howToPlay }}
+                </h1>
+
+                <div class="tutorials_wrap">
+                    <div class="tutorials__col_1">
+
+
+                        <div v-html="languages?.howToPlayResults" class="htp-content" v-cloak> </div>
+                        
+
+
+                    </div>
+                    <!-- <div class="tutorials__col_2">
+                        <img src="./assets/gifts-all.svg" width="100%" alt="" class="overlay-gift">
+                    </div> -->
+                </div>
+
+            </div>
+
+            
+
+
+            
+        </section>
+
+        <section id="faqM" class="fade-in two scale-in-ver-top gray-bg-light"  v-if="showFaq"
+        style="box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;
+        -webkit-box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;
+        -moz-box-shadow: 0px 6px 5px -1px rgba(0,0,0,0.40) inset;">
+            
+
+            <div class="container" style="margin-top: 0px !important;">
+
+
+                <div class="collapse-accordion">
+                    <ul>
+                        <li v-for="(items, index) of languages.faq">
+                            <input type="checkbox" :id="'list-item-' + (index+1)" name="accrodion">
+                            <label :for="'list-item-' + (index+1)"  class="first">
+                                <div class="inside-container">
+                                    <span class="expandText font-strong">{{ items?.Q }}</span>
+                                    <span class="collpaseText font-strong">{{ items?.Q }}</span>
+                                </div>
+                            </label>
+                            <ul>
+                                <li v-for="(item, index) of items?.A" >
+                                    <div class="inside-container">
+                                        <p v-html="( index + 1) + '. ' + item " v-cloak> 
+                                    </div>
+                                    
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <section id="intro">
+
+            <h1 class="medium-txt text-center" style="margin-bottom: 7vh; color: var(--accent-red);" >
+                {{ languages?.keepTheLoveAlive }} 
+            </h1>
+
+            <p class="mini-txt text-center" style="margin-bottom: 5vh;">
+                {{ languages?.introMessage1 }} 
+            </p>
+
+            <!-- <p class="mini-txt text-center" style="margin-bottom: 5vh;">
+                {{ languages?.introMessage2 }} 
+            </p>
+
+            <p class="mini-txt text-center" style="margin-bottom: 5vh;">
+                {{ languages?.introMessage3 }} 
+            </p> -->
+
+        </section>
+
+        
+        <section class="cd-wrap desktop" v-if="countdownMode===false"> 
+
+            
+            <!-- <h1 class="text-center title txt-bold">{{ languages?.twelveDaysOfChristmas }}</h1> -->
+
+            <div class="days-wrap">
+
+                <div class="dayLbl">
+                    <h1 class="love-txt medium-txt " style="text-align: center; ">{{ languages?.keepTheLoveAlive }}</h1>
+                    <h1 class="day-txt " style="text-transform: capitalize; color: #fff; text-align: center; ">{{ languages?.day }}</h1>
+                </div>
+
+                <div class="dayClock" style="display: flex; flex-direction: row;">
+                    <div class="txt-inside-img">
+                        <img src="./assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                        <div class="centered">
+                            <h1 v-if="mainOfferData?.currentDay < 10">0</h1>
+                            <h1 v-else>{{ mainOfferData?.currentDay }}</h1>
+                        </div>
+                    </div>
+    
+    
+                    <div class="txt-inside-img">
+                        <img src="./assets/gifts/clock-base.svg"  alt="clock" srcset="">
+                        <div class="centered">
+                            <h1>{{ mainOfferData?.currentDay }}</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>  
+
+
+
+
+
+        <!-- modal for Accept offer show 2 offers-->
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+
+            <div class="modal-content" v-if="instructions===false">
+
+                <i class="fas fa-close close"
+                v-on:click="hideModals"></i>
+
+                <div class="pbannerWrap">
+
+
+                    <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                    v-if="mainOfferData?.currentStatus === null && apiError===false"
+                    alt="" class="env">
+
+                    <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                    v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0')  && apiError===false"
+                    alt="" class="env">
+
+                    <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                    v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false"
+                    alt="" class="env">
+
+                    
+                    <img src="./assets/congratulations-pop-up.png" class="fade-in one" alt="header" width="100%" 
+                    v-if="mainOfferData?.currentStatus === null && apiError===false">
+
+                    <img src="./assets/congratulations-pop-up.png" class="fade-in one" alt="header" width="100%" 
+                    v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0')  && apiError===false">
+
+                    <img src="./assets/congratulations-pop-up.png" class="fade-in one" alt="header" width="100%" 
+                    v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false">
+
+                    <img src="./assets/error-pop-up.png" alt="header" width="100%" 
+                    v-if="apiError === true">
+
+                </div>
+
+                <div class="message-wrap fade-in one" v-if="apiError === false">
+
+                    <h1 class="txt-bold black-txt text-center" v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0') ">
+                        {{ languages?.missinComplete }}!
+                    </h1>
+
+                    <h1 class="txt-bold black-txt text-center" v-if="mainOfferData?.currentStatus === null">
+                        {{ languages?.almostThere }}!
+
+                        
+                    </h1>
+
+                    <h1 class="txt-bold black-txt text-center" v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')  ">
+                        {{ languages?.congratulations }}!
+                    </h1>
+                    
+
+                    <div class="inner" v-if="mainOfferData?.currentStatus === null">
+                        <p><span> {{ languages?.at_msg1 }}</span> <span class="black-txt" style="font-family: noto-sans-bold !important;">
+                        {{ 
+
+                            mainOfferData?.offerData[0].selected===true 
+                               ? mainOfferData?.offerData[0].currentOfferNote
+                                : mainOfferData?.offerData[1].currentOfferNote 
+
+                         }}</span> <span>{{ languages?.at_msg2 }}</span></p>
+
+                        <button class="btn cta-button" style="margin: 30px 0px 20px;"
+                            v-on:click="hideModals(); acceptOffer( getSelectedOfferId() ); redirectCta( getSelectedCtaLink() );" > 
+                            {{ mainOfferData?.offerData[0].selected===true 
+                               ? mainOfferData?.offerData[0].ctaText
+                                : mainOfferData?.offerData[1].ctaText 
+                            }} 
+                        </button>
+                    </div>
+
+                    <div class="inner" v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0') ">
+                        <p><span> {{ languages?.pressClaimMsg }}</span></p>
+
+                        <button class="btn cta-button" style="margin: 30px 0px 20px;"
+                            v-on:click="hideModals(); claimReward();" > {{ languages?.claim }} </button>
+                    </div>
+
+                    <div class="inner" v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')  ">
+                        <p><span> {{ languages?.congrats_msg_1 }}</span> <span class="pink-txt" style="font-family: noto-sans-bold !important;">{{ showReward() }}</span> <span>{{ languages?.congrats_msg_2 }}</span></p>
+
+                        <button class="btn cta-button" style="margin: 30px 0px 20px;"
+                            v-on:click="hideModals();" > {{ languages?.great }} </button>
+                    </div>
+                    
+                </div>
+
+
+
+                <!-- for API error-->
+                <div class="message-wrap" v-else>
+                    <h1 class="txt-bold black-txt text-center">
+                        {{ errorTitle!=='' ? errorTitle : languages?.errorTitle }}!
+                    </h1>
+                    <div class="inner">
+
+                        <p>{{ errorMessage!=='' ? errorMessage : languages?.errorMessage }}</p>
+
+                        <button class="btn cta-button" style="margin: 30px 0px 20px;" v-if="isOpenOffer"
+                            v-on:click="hideModals(); openOffer();" > {{ languages?.retry || 'Retry' }} 
+                        </button>
+
+                        <button class="btn cta-button" style="margin: 30px 0px 20px;" v-else
+                            v-on:click="hideModals(); acceptOffer( getSelectedOfferId() );" > {{ languages?.retry || 'Retry' }}
+                        </button>
+
+                    </div>
+                </div>
+
+
+            </div>  
+            
+            
+
+            <!-- for how it works modal (mobile only)-->
+            <div class="modal-content" v-if="instructions===true">
+
+                <i class="fas fa-close close"
+                v-on:click="hideModals"></i>
+
+                <div class="message-wrap fade-in one">
+
+                    <img src="./assets/logoblack.png" height="40px" alt="logo" style="display: block; margin: 40px auto 12px; place-self: center;" >
+                    <h3 class=" black-txt text-center uppercase mb-1" style=" letter-spacing: 10px;">PRESENTS</h3>
+
+                    <h1 class="txt-bold red-txt text-center">
+                        {{ languages?.happiLunarMessage }}!
+                    </h1>
+
+                    <h3 class="txt-bold blue-txt text-center" style="margin-top: 2vh;">
+                        {{ languages?.howItWorks || 'How it Works'}}
+                    </h3>
+
+                    <div class="inner">
+
+                        <div v-html="languages?.howToPlayResults" v-cloak
+                        style="max-height: 30vh;
+                        overflow-y: scroll;"> </div>
+
+
+                        <button class="btn cta-button" style="margin: 30px 0px 20px;"
+                            v-on:click="hideModals(); finishTut();" > {{ languages?.gotIt || 'Got it' }} 
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- modal for OpenOffer show 2 offers-->
+        <div id="myModal2" class="modal">
+
+            <i class="fas fa-close close"
+                v-on:click="hideModals"></i>
+
+            <div class="wrapper">
+
+
+                <div class="modal-content">
+
+
+
+                    <div class="pbannerWrap">
+
+
+                        <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                        v-if="mainOfferData?.currentStatus === null && apiError===false"
+                        alt="" class="env">
+    
+                        <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                        v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0')  && apiError===false"
+                        alt="" class="env">
+    
+                        <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                        v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false"
+                        alt="" class="env">
+    
+                        
+                        <img src="./assets/left-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="mainOfferData?.currentStatus === null && apiError===false">
+    
+                        <img src="./assets/left-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0')  && apiError===false">
+    
+                        <img src="./assets/left-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false">
+    
+                        <img src="./assets/error-pop-up.png" alt="header" width="100%" 
+                        v-if="apiError === true">
+    
+                    </div>
+
+    
+    
+                    <div class="message-wrap fade-in one">
+    
+                        <h1 class="txt-bold black-txt text-center" v-cloak>
+                            {{ mainOfferData?.offerData[0].currentOfferNote || 'loading' }}!
+                        </h1>
+    
+    
+                        <div class="inner" v-cloak>
+                            <p><span> {{ languages?.chooseOfferTxt1 || ' You can choose '}} </span> <span class="black-txt" style="font-family: noto-sans-bold !important;">{{ mainOfferData?.offerData[0].reward || 'loading' }}</span> <span>  {{ languages?.chooseOfferTxt2 || ' to be used on any slot game on the happistar platform '}} </span></p>
+    
+                            <button class="btn cta-button" style="margin: 30px 0px 20px;"
+                                v-on:click="hideModals(); acceptOffer( mainOfferData?.offerData[0].currentOfferId ); redirectCta( mainOfferData?.offerData[0].ctaURL );" v-cloak> {{ mainOfferData?.offerData[0].ctaText || 'loading' }} </button>
+
+                            <a href="javascript:void(0);"  style="color: var(--accent-black); display: block;" v-on:click="hideModals();">{{ languages?.maybeLater || 'Maybe Later' }} </a>
+
+                        </div>
+                        
+                    </div>
+    
+                </div>
+    
+                <div class="orLbl uppercase">
+                     <h1>{{ languages?.orTxt }}</h1>
+                </div>
+    
+    
+                <div class="modal-content">
+                    
+                    <div class="pbannerWrap">
+
+
+                        <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                        v-if="mainOfferData?.currentStatus === null && apiError===false"
+                        alt="" class="env">
+    
+                        <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                        v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0')  && apiError===false"
+                        alt="" class="env">
+    
+                        <img v-bind:src=" './assets/today-coins/' + mainOfferData?.currentDay + '.png'  " 
+                        v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false"
+                        alt="" class="env">
+    
+                        
+                        <img src="./assets/right-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="mainOfferData?.currentStatus === null && apiError===false">
+    
+                        <img src="./assets/right-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="(mainOfferData?.currentStatus === 0 || mainOfferData?.currentStatus === '0')  && apiError===false">
+    
+                        <img src="./assets/right-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false">
+    
+                        <img src="./assets/error-pop-up.png" alt="header" width="100%" 
+                        v-if="apiError === true">
+
+                        <img src="./assets/right-offer.png" class="fade-in one" alt="header" width="100%" 
+                        v-if="(mainOfferData?.currentStatus === 1 || mainOfferData?.currentStatus === '1')   && apiError===false">
+    
+                    </div>
+    
+    
+                    <div class="message-wrap fade-in one">
+    
+                        <h1 class="txt-bold black-txt text-center" v-cloak>
+                            {{ mainOfferData?.offerData[1].currentOfferNote || 'loading' }}!
+                        </h1>
+    
+    
+                        <div class="inner" v-cloak>
+                            <p><span> {{ languages?.chooseOfferTxt1 || ' You can choose '}} </span> <span class="black-txt" style="font-family: noto-sans-bold !important;">{{ mainOfferData?.offerData[1].reward || 'loading' }}</span> <span> {{ languages?.chooseOfferTxt2 || ' to be used on any slot game on the happistar platform '}}</span></p>
+    
+                            <button class="btn cta-button" style="margin: 30px 0px 20px;"
+                                v-on:click="hideModals(); acceptOffer( mainOfferData?.offerData[1].currentOfferId ); redirectCta( mainOfferData?.offerData[1].ctaURL );" v-cloak> {{ mainOfferData?.offerData[1].ctaText || 'loading' }} </button>
+
+                                <a href="javascript:void(0);"  style="color: var(--accent-black); display: block;" v-on:click="hideModals();">{{ languages?.maybeLater || 'Maybe Later' }} </a>
+
+                        </div>
+                        
+                    </div>
+    
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+    <script src="./js/axios.min.js"></script>
+    <script src="./js/vuelidate.min.js"></script>
+    <script src="./js/validators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js" integrity="sha256-ZykW30UBCXWkPGsVyVPdJlUrce9/PawgYCEzinA4pnU=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.17/moment-timezone-with-data-2012-2022.min.js" integrity="sha256-pQNlWZakdoYCCoBWZ5G8hXPqONH7l7QX+MGFoAkiBqs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/localstorage-slim"></script>
+    <script src="./js/functions.js?v=113"></script>
+
+    
+</body>
+    <!--v10131918-->
+</html>

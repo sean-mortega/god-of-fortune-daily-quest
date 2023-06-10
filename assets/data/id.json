@@ -1,0 +1,68 @@
+  {
+
+  "days": "Hari",
+  "hours": "Jam",
+  "minutes": "Menit",
+  "seconds": "Detik",
+  "keepTheLoveAlive": "God of Fortune Daily Quest",
+
+  "instructionCta": "Tekan Pot yang Disorot untuk membuka hadiah hari ini.",
+  "myPresents": "Hadiahku",
+  "howToPlay": "Cara bermain",
+  "faqTitle": "Tanya Jawab Umum",
+  "day": "Hari",
+  "status": "Hasil",
+  "reward": "Hadiah sudah di ambil",
+  "opened": "dibuka",
+  "available": "tersedia",
+  "days2go": " hari lagi!",
+  "day2go": " hari lagi!",
+  "almostThere": "Hampir sampai",
+  "at_msg1": "Untuk mengklaim bonus hari ini, yang perlu Anda lakukan hanyalah ",
+  "at_msg2": "Setelah selesai, Anda bisa kembali ke sini.",
+  "takeMeToDeposit": "Bawa saya ke deposit",
+  "noThanks": "Tidak, terima kasih",
+  "missinComplete": "Misi terselesaikan",
+  "pressClaimMsg": "Asik! Kamu bisa! Ini bonus nya!",
+  "claim": "Klaim",
+  "congratulations": "Selamat",
+  "congrats_msg_1": "Anda telah membuka ",
+  "congrats_msg_2": "untuk digunakan pada game slot apa pun di platform Happistar",
+  "great": "Hebat!",
+  "rewardDisclaimerMsg": "*bonus akan diberikan 5 menit hingga 60 menit",
+  "errorTitle": "Kesalahan yang tidak diketahui.",
+  "errorMessage": "Sebentar ya! Sistem sedang diperbaiki! Coba lagi atau hubungi Live Chat!",
+  "howToPlayResults": "<h2>Syarat dan ketentuan:</h2><ul> <li>1. Semua Pemain Happistar berhak untuk berpartisipasi dalam mengikuti Tantangan Dewa Keberuntungan</li><li>2. Tawaran ini berlaku dari tanggal 10 Maret pukul 04:29 a.m sampai dengan 17 March 2023 pukul 04:30 a.m.</li><li>3. Untuk bergabung, pemain harus menuju ke Tab Tantangan Dewa Keberuntungan dan klik 'Koin Emas hari ini'.</li><li>4. Setiap Koin Emas memiliki tantangan terkait yang harus diselesaikan dalam hari tersebut untuk menerima hadiah.</li><li>5. Semua hadiah akan dikreditkan secara otomatis ke akun Anda dalam waktu 24 jam setelah tantangan diselesaikan dan harus mencapai persyaratan taruhan yang diperlukan sebelum penarikan dapat dilakukan.</li></ul><h2>Syarat dan Ketentuan Bonus:</h2><ul> <li>6. Putaran Gratis=Kemenangan dari putaran gratis x 20 persyaratan taruhan</li><li>7. Bonus Kasino=Bonus x 5 atau 10 persyaratan taruhan</li><li>8. HappiStar berhak mengubah atau membatalkan bonus tanpa pemberitahuan.</li><li>9. HappiStar berhak untuk mendiskualifikasi pemain mana pun yang ditemukan berpartisipasi dalam aktivitas penipuan apa pun.</li><li>10. Syarat & Ketentuan Umum berlaku.</li></ul>",
+  "retry": "Kembali",
+
+  "alreadyOpenedTheBox" : "Anda sudah mebuka hadiah ini",
+  "alreadyClaimedTheBonus" :  "Anda sudah mengklaim bonus ini",
+  "missed": "Dilewatkan",
+  "error": "kesalahan",
+  "howItWorks": "Bagaimana itu bekerja",
+  
+
+  "chooseOfferTxt1": "Silakan Pilih",
+  "chooseOfferTxt2": " Dapat dimainkan pada semua permainan Slot yang tersedia di Happistar",
+  "maybeLater": "Dilain Waktu",
+  "happiIntroMsg": "God Of Fortune Daily Quest",
+  "introMessage1": "Mereka mengatakan keberuntungan berpihak pada yang berani! Apakah Anda siap menghadapi tantangan? Bergabunglah dengan Dewa Keberuntungan Harian untuk menyelesaikan, misi yangada! Ikutan setiap hari untuk dapatkan Koin Emas disetiap harinya!",
+  "introMessage2": "Masuk dan lengkapi misi setiap harinya dan dapatkan hadiah!",
+  "introMessage3": "Jomblo atau punya pasangan, semua bisa ikutan!",
+  "myEnvelopes": "Amplop Merah Saya",
+
+
+  "comingSoonMsg": "Pada Minggu tanggal 22, HappiStar akan membagikan keberuntungan untuk semua. Kunjungi dan lihat apa yang akan terjadi dalam 2 hari.",
+  "comingSoonMsg2": "Come back and see what's happening in 2 days.",
+  "orTxt": "Atau",
+
+  "faq": [
+    {"Q": "Tanya Jawab Umum",
+    "A": [
+      "FAQ Item 1",
+      "Faq item 2",
+      "and faq item 3 here"
+    ]
+    }
+  ]
+}

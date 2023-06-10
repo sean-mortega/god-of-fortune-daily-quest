@@ -1,0 +1,69 @@
+{
+
+  "days": "日々",
+  "hours": "時間",
+  "minutes": "分",
+  "seconds": "秒",
+  "keepTheLoveAlive": "God Of Fortune デイリークエスト",
+
+  "instructionCta": "ハイライトされたポットをタップして、今日の報酬をアンロックします。",
+  "myPresents": "プレゼント",
+  "howToPlay": "遊び方法",
+  "faqTitle": "よくある質問",
+  "day": "日",
+  "status": "ステータス",
+  "reward": "ギフト獲得",
+  "opened": "開いた",
+  "available": "利用可能",
+  "days2go": "残り日！",
+  "day2go": "残り日！",
+  "almostThere": "もうすぐ",
+  "at_msg1": "今日のボーナスを請求するには、 を行うだけです ",
+  "at_msg2": "完了した場合、ここに戻ってくださいませ。",
+  "takeMeToDeposit": "預金へ",
+  "noThanks": "結構です",
+  "missinComplete": "ミション完了",
+  "pressClaimMsg": "やったね！やったね! ボーナスが出るよ!!",
+  "claim": "請求",
+  "congratulations": "おめでとうございます",
+  "congrats_msg_1": " をアンロックされました。 ",
+  "congrats_msg_2": "HappiStar専用ウエブサイトのスロットゲームにご利用いただけます。",
+  "great": "すばらしい",
+  "rewardDisclaimerMsg": "※ボーナスは5分から60分まで進呈する",
+  "errorTitle": "不明なエラー",
+  "errorMessage": "おっと！システムの不具合! 今確認してます！ すぐに再試行するか、サポートに連絡してください!",
+  "howToPlayResults": "<h2>ボーナス利用規約:</h2><ul> <li>1. すべてのHappiStarプレイヤーは、God of Fortuneデイリークエストに参加する事が出来ます。</li><li>2. このキャンペーンは、2023 年 3 月 10 日午前 0 時から 2023 年 3 月 17 日午後 4 時 30 分まで (UTC +4) 実施されます。</li><li>3. 参加するには、プレイヤーはGod of Fortuneのデイリー クエストスペシャル タブに移動し、「今日の金貨」をクリックする必要があります。</li><li>4. 各ゴールドコインには対応するチャレンジがあり、報酬を受け取るには 1 日以内に完了する必要があります。</li><li>5. すべての報酬は、チャレンジが完了すると 24 時間以内にアカウントに自動的に入金されます。</li></ul><h2>引き出しを行うには、必要な賭け条件に達する必要があります:</h2><ul> <li>6. フリースピン=フリースピンの勝利金賞金 x 20 賭け条件</li><li>7. カジノボーナス=ボーナス x 5 または 10 賭け条件</li><li>8. HappiStar は予告なしにボーナスを変更またはキャンセルする権利を留保します。</li><li>9. HappiStar は、不正行為に関与していることが判明したプレイヤーの資格を剥奪する権利を留保します。</li><li>10. 一般利用規約が適用されます。</li></ul>",
+  "retry": "リトライ",
+
+  "alreadyOpenedTheBox" : "このギフトは既に開封済みです",
+  "alreadyClaimedTheBonus" :  "子のボーナスは既に獲得済みです",
+  "missed": "ミスされた",
+  "error": "エラー",
+  "howItWorks": "使用方法",
+
+
+  "chooseOfferTxt1": "選択する事が可能です",
+  "chooseOfferTxt2": " ハピスターのすべてのスロットゲームに使用できます。",
+  "maybeLater": "後で",
+  "happiIntroMsg": "God Of Fortune デイリークエスト",
+  "introMessage1": "彼らは、幸運は勇敢な者に味方すると言います！あなたは挑戦する準備ができていますか? God Of Fortuneデイリー クエストに参加して、クリックして完了し、征服しましょう!毎日ログインしてその日のゴールド コインをクリックし、毎日の幸運のためにタスクを完了するように挑戦してください!",
+  "introMessage2": "ログインして、毎日の課題をクリアして報酬をゲットしよう",
+  "introMessage3": "独身でも、恋人同士でも、誰でもOKです",
+  "myEnvelopes": "マイエンベロープ",
+
+
+  "comingSoonMsg": "22日（日）には、ハピスターがみんなでラッキーを共有し、お祝いします。",
+  "comingSoonMsg2": "是非、2日後に見に来てください。",
+  "orTxt": "又は",
+
+  "faq": [
+    {"Q": "FAQ",
+      "A": [
+        "FAQ Item 1",
+        "Faq item 2",
+        "and faq item 3 here"
+      ]
+    }
+  ]
+
+}

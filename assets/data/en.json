@@ -1,0 +1,65 @@
+{
+
+  "days": "Days",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "seconds": "Seconds",
+  "keepTheLoveAlive": "God of Fortune Daily Quest",
+
+  "instructionCta": "Tap the highlighted pot to unlock todays reward.",
+  "myPresents": "My Presents",
+  "howToPlay": "How to Play",
+  "faqTitle": "FAQ's",
+  "day": "day",
+  "status": "status",
+  "reward": "Gift Claimed",
+  "opened": "opened",
+  "available": "available",
+  "days2go": "days to go!",
+  "day2go": "day to go!",
+
+  "almostThere": "Almost there",
+  "at_msg1": "To claim today's bonus, all you need to do is ",
+  "at_msg2": "Once done, you can come back here.",
+  "takeMeToDeposit": "Take me to deposit",
+  "noThanks": "No Thanks",
+  "missinComplete": "Mission Complete",
+  "pressClaimMsg": "Yay! You did it! Here comes your bonus!",
+  "claim": "Claim",
+  "congratulations": "Congratulations",
+  "congrats_msg_1": "You have unlocked",
+  "congrats_msg_2": "to be used on any slot game on the Happistar platform",
+  "great": "Great!",
+  "rewardDisclaimerMsg": "*bonuses will be give 5 mins up to 60 mins",
+  "errorTitle": "Unknown Error",
+  "errorMessage": "Whoops! System hiccup! We’re on it! Try again soon or contact support!", 
+  "howToPlayResults": "<h2>Terms and Conditons:</h2><ul> <li>1. All Happistar Players are eligible to participate in the God of Fortune Daily Quest.</li><li>2. This campaign will run from 04:30 a.m of March 10, 2023 to 04:29 a.m of March 17, 2023.</li><li>3. To join, players must go to the God of Fortune Daily Quest Special Tab and click the 'Gold Coin of the day'.</li><li>4. Each Gold Coin has corresponding challenges that must be completed within the day to receive a reward.</li><li>5. All rewards will be automatically credited in your account within 24 hours once the challenge has been completed and must reach the required wagering requirement before a withdrawal can be made.</li></ul><h2>Bonus Terms and Conditions:</h2><ul> <li>6. Free Spins=Winnings from free spins x 20 wagering requirement</li><li>7. Casino Bonus=Bonus x 5 or 10 wagering requirement </li><li>8. HappiStar reserves the right to change or cancel the bonus without notice.</li><li>9. HappiStar reserves the right to disqualify any player who is found participating in any fraudulent activities.</li><li>10. General Terms & Conditions apply.</li></ul>",
+  "retry": "Retry",
+  "missed": "missed",
+  "error": "Error",
+  "howItWorks": "How it Works",
+
+  
+  "chooseOfferTxt1": "You can choose",
+  "chooseOfferTxt2": " to be used on any slot game on the happistar platform",
+  "maybeLater": "Maybe Later",
+  "happiIntroMsg": "God of Fortune Daily Quest",
+  "introMessage1": "They say fortune favors the bold! Are you up for the challenge? Join the God of Fortune Daily Quest to click, complete, and conquer! Log in every day to click the Gold Coin of the Day and challenge yourself to complete tasks for your daily dose of good fortune!",
+  "introMessage2": "Log in and complete a daily challenge to get rewarded!",
+  "introMessage3": "Single or taken, everyone’s invited!",
+  "myEnvelopes": "My Envelopes",
+
+  "comingSoonMsg": "On Sunday 22nd to celebrate Happistar will be sharing the lucky with everyone.",
+  "comingSoonMsg2": "Come back and see what's happening in 2 days.",
+  "orTxt": "or",
+
+  "faq": [
+    {"Q": "FAQ",
+      "A": [
+        "FAQ Item 1",
+        "Faq item 2",
+        "and faq item 3 here"
+      ]
+    }
+  ]
+}
